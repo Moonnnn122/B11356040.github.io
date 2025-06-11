@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期末網頁</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <style>
+        [class^="col-"] {
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            background-image: url("期末/首1.jpg");
+            color: white;
+            height: 95vh;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        header img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+        }
+        
+        #secondHeader .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+        }
+        
+        header h1 {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .boxed-text {
+            color: black;
+            font-size: 24px;
+            border: 2px solid #000;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 20px;
+            padding: 100px 50px;
+            position: relative;
+            z-index: 10;
+            width: 80%;
+            margin: 50px auto;
+            text-align: justify;
+        }
+        
+        h1 {
+            padding: 30px 25px;
+            text-align: left;
+        }
+        
+        .c {
+            font-size: 24px;
+            text-align: justify;
+        }
+        
+        body {
+            font-family: 'Noto Serif TC', '標楷體', serif;
+            margin: 0;
+        }
+        
+        #secondHeader.h {
+            min-height: 100vh;
+            padding-bottom: 100px;
+            text-align: center;
+            background-image: url("期末/六神.jpg");
+            background-repeat: repeat;
+            background-position: center;
+            padding: 50px 0;
+            color: white;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .cards-container {
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin: 20px;
+        }
+        
+        .card {
+            width: 100%;
+            max-width: none;
+            min-width: 0;
+            height: 100%;
+        }
+        
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .card-content {
+            padding: 15px;
+        }
+        
+        .card-w {
+            border: 5px solid #66f0b0 !important;
+        }
+        
+        .card-w .card-content h3 {
+            color: #66f0b0;
+        }
+        
+        .card-z {
+            border: 5px solid #f1c83e !important;
+        }
+        
+        .card-z .card-content h3 {
+            color: #f1c83e;
+        }
+        
+        .card-l {
+            border: 5px solid #8c57ee !important;
+        }
+        
+        .card-l .card-content h3 {
+            color: #8c57ee;
+        }
+        
+        .card-c {
+            border: 5px solid #46f736 !important;
+        }
+        
+        .card-c .card-content h3 {
+            color: #46f736;
+        }
+        
+        .card-s {
+            border: 5px solid #1acaff !important;
+        }
+        
+        .card-s .card-content h3 {
+            color: #1acaff;
+        }
+        
+        .card-h {
+            border: 5px solid #fa2828 !important;
+        }
+        
+        .card-h .card-content h3 {
+            color: #fa2828;
+        }
+        
+        .card.dark img {
+            border-radius: 50%;
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        #Content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100vh;
+            z-index: 2;
+            padding-top: 100px;
+            background-image: url("期末/六神.jpg");
+            background-repeat: repeat;
+            background-position: center;
+            background-size: auto;
+            background-attachment: local;
+        }
+        
+        nav.navbar {
+            position: relative;
+            z-index: 1000;
+        }
+        /* 地圖區域通用樣式 */
+        
+        .map-row {
+            min-height: 50vh;
+            margin: 0;
+        }
+        
+        .map-content {
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+        }
+        
+        .map-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .map-img {
+            max-width: 90%;
+            max-height: 80%;
+            object-fit: cover;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .map-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-subtitle {
+            font-size: 1.9em;
+            color: #333;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-description {
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #222;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .map-features {
+            font-size: 1.2em;
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 993px) and (max-width: 1399px) {
+            .cards-container .col-lg-2 {
+                flex: 0 0 33.33% !important;
+                max-width: 33.33% !important;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 992px) {
+            .cards-container .col-lg-2 {
+                flex: 0 0 50% !important;
+                max-width: 50% !important;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            #Content {
+                top: 70px;
+            }
+        }
+        
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .boxed-text {
+                width: 80%;
+                padding: 50px 30px;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 991px) {
+            .boxed-text {
+                width: 85%;
+                padding: 40px 30px;
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                background-image: url("期末/首2.png");
+            }
+            .boxed-text {
+                width: 90%;
+                padding: 20px 15px;
+                font-size: 18px;
+            }
+            h1 {
+                text-align: center;
+            }
+            .card {
+                width: 90%;
+            }
+            .cards-container .col-lg-2 {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+            }
+            #secondHeader.h {
+                min-height: 100vh;
+            }
+            #Content {
+                background-size: cover;
+                background-repeat: repeat;
+                min-height: 100vh;
+            }
+            #map .row {
+                flex-direction: column !important;
+            }
+            #map .col-md-4,
+            #map .col-md-8 {
+                min-height: 40vh !important;
+            }
+            h2 {
+                font-size: 2em !important;
+            }
+            .p-5 {
+                padding: 2rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navCollapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><span class="navbar-text">B11356040</span></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" id="homeLink">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="Link">六神介紹</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" id="m">地圖介紹</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="mainHeader" style="position: relative;">
+        <div class="overlay"></div>
+        <img src="期末/標題.png" alt="標題" style="position: relative; z-index: 2;">
+        <p class="boxed-text">《原神》是由米哈遊開發的動作角色扮演遊戲，於2020年9月正式上線。遊戲劇情於虛構世界的提瓦特大陸上展開， 該世界分成七個國家，每個國家分別以一種元素為主題，並由對應元素的神明所分管。遊戲劇情的主角為「旅行者」， 是一對在無數個世界中旅行的兄妹，因遭遇陌生神明阻攔在提瓦特被迫分離。玩家將扮演旅行者， 為了尋找自己失散的唯一血親，並與派蒙一同遊歷七國。
+        </p>
+    </header>
+
+    <div id="homeContent" class="container" style="display: none;">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1>遊戲玩法介紹</h1>
+                <p class="c">《原神》是一款開放世界的動作角色扮演遊戲，玩家至多能夠選擇四名角色參與戰鬥， 並且在戰鬥中可以快速切換。玩家可以透過各種方式增強角色的力量，例如提高角色的等級， 改進角色裝備的聖遺物和武器。除了探索之外，玩家還可以嘗試各種挑戰以獲得獎勵。 世界中各處散佈著頭目和挑戰，它們獎勵高價值資源，但會消耗隨著時間的推移緩慢再生的體力。 玩家可以透過完成這些挑戰以提高冒險等級，進而解鎖新的任務、挑戰並提升世界等級。 世界等級是衡量世界上敵人的強大程度以及擊敗他們所獲得獎勵的稀有程度的標準。
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <a href="https://wiki.biligame.com/ys/%E9%A6%96%E9%A1%B5" target="_blank">
+                    <img src="期末/首頁.jpg" alt="原神wiki" style="max-width: 100%; height: auto;">
+                </a>
+                <p style="margin-top: 10px;">點擊圖片前往原神Wiki</p>
+            </div>
+        </div>
+    </div>
+
+    <header id="secondHeader" class="h" style="display: none; position: relative;">
+        <div class="overlay"></div>
+    </header>
+
+    <div id="Content" class="container-fluid" style="display:none;">
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div class="row cards-container">
+                <div class="col-12 col-md-4 col-lg-2">
+                    <div class="card border card-w">
+                        <img src="期末/風.png" class="img-fluid" alt="風神">
+                        <div class="card-content">
+                            <h3>溫迪</h3>
+                            <p>如風般自由的吟遊詩人，駐於牧歌之城。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-2">
+                    <div class="card border card-z">
+                        <img src="期末/岩.png" class="img-fluid" alt="岩神">
+                        <div class="card-content">
+                            <h3>鍾離</h3>
+                            <p>韜玉之石，可明八荒；燦若天星，縱橫無雙。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-2">
+                    <div class="card border card-l">
+                        <img src="期末/雷.png" class="img-fluid" alt="雷神">
+                        <div class="card-content">
+                            <h3>雷電將軍</h3>
+                            <p>厭離浮世泡影，欣求淨土常道。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-2">
+                    <div class="card border card-c">
+                        <img src="期末/草.png" class="img-fluid" alt="草神">
+                        <div class="card-content">
+                            <h3>納西妲</h3>
+                            <p>白草淨華，幽宮啟蟄</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-2">
+                    <div class="card border card-s">
+                        <img src="期末/水.png" class="img-fluid" alt="水神">
+                        <div class="card-content">
+                            <h3>芙寧娜</h3>
+                            <p>永世領唱，無盡圓舞</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 col-lg-2">
+                    <div class="card border card-h">
+                        <img src="期末/火.png" class="img-fluid" alt="火神">
+                        <div class="card-content">
+                            <h3>瑪薇卡</h3>
+                            <p>至明、至熾、至烈的再臨之火</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map" class="container-fluid" style="display: none; padding: 0; min-height: 100vh;">
+        <!-- 蒙德 -->
+        <div class="row map-row">
+            <div class="col-md-8 position-relative text-dark map-content" style="border-right: 1px solid rgba(102,240,176,0.3);
+                        background-image: 
+                            radial-gradient(circle at 20% 50%, rgba(102,240,176, 0.2) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(102,240,176, 0.15) 0%, transparent 50%),
+                            radial-gradient(circle at 40% 80%, rgba(102,240,176, 0.1) 0%, transparent 50%);">
+                <div class="p-5">
+                    <h2 class="map-title" style="color: #66f0b0;">蒙德城</h2>
+                    <p class="map-subtitle">風與自由的國度</p>
+                    <p class="map-description">
+                        蒙德是提瓦特七國中的自由之國，坐落於大陸的東北部。這裡是風神巴巴托斯的領土，崇尚自由與詩歌。蒙德城建立在湖心的小島上，四周環繞著翠綠的平原和高聳的山脈。
+                    </p>
+                    <div class="map-features" style="background: rgba(102,240,176,0.2); border-left: 4px solid #66f0b0;">
+                        <strong style="color: #66f0b0;">特色景點：</strong><br>
+                        <span style="color: #333;">
+                        • 風起地：千風神廟<br>
+                        • 蒙德大教堂<br>
+                        • 天使的饋贈酒館<br>
+                        • 西風騎士團總部
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #66f0b0, #4ecdc4);">
+                <img src="期末/蒙德.jpg" alt="蒙德" class="img-fluid rounded shadow-lg map-img">
+            </div>
+        </div>
+
+        <!-- 璃月 -->
+        <div class="row map-row">
+            <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #f1c83e, #e6b800);">
+                <img src="期末/璃月.jpg" alt="璃月" class="img-fluid rounded shadow-lg map-img">
+            </div>
+            <div class="col-md-8 position-relative text-dark map-content" style="border-left: 1px solid rgba(241,200,62,0.3);
+                        background-image: 
+                            radial-gradient(circle at 80% 50%, rgba(241,200,62, 0.2) 0%, transparent 50%),
+                            radial-gradient(circle at 20% 20%, rgba(241,200,62, 0.15) 0%, transparent 50%),
+                            radial-gradient(circle at 60% 80%, rgba(241,200,62, 0.1) 0%, transparent 50%);">
+                <div class="p-5">
+                    <h2 class="map-title" style="color: #f1c83e;">璃月港</h2>
+                    <p class="map-subtitle">岩與契約的國度</p>
+                    <p class="map-description">
+                        璃月是商業與契約之國，位於提瓦特大陸的東南部。這裡是岩神摩拉克斯的領土，以繁榮的貿易和嚴謹的契約精神聞名。璃月港是東方建築風格的海港都市，背靠險峻的山脈。
+                    </p>
+                    <div class="map-features" style="background: rgba(241,200,62,0.2); border-left: 4px solid #f1c83e;">
+                        <strong style="color: #f1c83e;">特色景點：</strong><br>
+                        <span style="color: #333;">
+                        • 璃月港商業區<br>
+                        • 玉京台<br>
+                        • 絕雲間仙人洞府<br>
+                        • 璃沙郊野古蹟群
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 稻妻 -->
+        <div class="row map-row">
+            <div class="col-md-8 position-relative text-dark map-content" style="border-right: 1px solid rgba(140,87,238,0.3);
+                        background-image: 
+                            radial-gradient(circle at 20% 50%, rgba(140,87,238, 0.2) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(140,87,238, 0.15) 0%, transparent 50%),
+                            radial-gradient(circle at 40% 80%, rgba(140,87,238, 0.1) 0%, transparent 50%);">
+                <div class="p-5">
+                    <h2 class="map-title" style="color: #8c57ee;">稻妻城</h2>
+                    <p class="map-subtitle">雷與永恆的國度</p>
+                    <p class="map-description">
+                        稻妻是雷電與永恆之國，由多個島嶼組成的群島國家。這裡是雷神巴爾的領土，以武士精神和櫻花盛開聞名。稻妻城建立在鳴神島上，具有濃厚的東瀛風格，雷電常年環繞島嶼周圍。
+                    </p>
+                    <div class="map-features" style="background: rgba(140,87,238,0.2); border-left: 4px solid #8c57ee;">
+                        <strong style="color: #8c57ee;">特色景點：</strong><br>
+                        <span style="color: #333;">
+                        • 天守閣<br>
+                        • 鳴神大社<br>
+                        • 神櫻大祓<br>
+                        • 無想刃狹間
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #8c57ee, #6a4cd4);">
+                <img src="期末/稻妻.jpg" alt="稻妻" class="img-fluid rounded shadow-lg map-img">
+            </div>
+        </div>
+
+        <!-- 須彌 -->
+        <div class="row map-row">
+            <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #46f736, #32d624);">
+                <img src="期末/須彌.jpg" alt="須彌" class="img-fluid rounded shadow-lg map-img">
+            </div>
+            <div class="col-md-8 position-relative text-dark map-content" style="border-left: 1px solid rgba(70,247,54,0.3);
+                        background-image: 
+                            radial-gradient(circle at 80% 50%, rgba(70,247,54, 0.2) 0%, transparent 50%),
+                            radial-gradient(circle at 20% 20%, rgba(70,247,54, 0.15) 0%, transparent 50%),
+                            radial-gradient(circle at 60% 80%, rgba(70,247,54, 0.1) 0%, transparent 50%);">
+                <div class="p-5">
+                    <h2 class="map-title" style="color: #46f736;">須彌城</h2>
+                    <p class="map-subtitle">草與智慧的國度</p>
+                    <p class="map-description">
+                        須彌是智慧與草木之國，擁有茂密的雨林和廣袤的沙漠。這裡是草神布耶爾的領土，以學術研究和自然和諧共處聞名。須彌城是建在巨樹上的奇蹟都市，體現了人與自然的完美融合。
+                    </p>
+                    <div class="map-features" style="background: rgba(70,247,54,0.2); border-left: 4px solid #46f736;">
+                        <strong style="color: #46f736;">特色景點：</strong><br>
+                        <span style="color: #333;">
+                        • 教令院<br>
+                        • 世界樹<br>
+                        • 雨林深處聖所<br>
+                        • 沙漠古代遺跡
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 楓丹 -->
+        <div class="row map-row">
+            <div class="col-md-8 position-relative text-dark map-content" style="border-right: 1px solid rgba(26,202,255,0.3);
+                        background-image: 
+                            radial-gradient(circle at 20% 50%, rgba(26,202,255, 0.2) 0%, transparent 50%),
+                            radial-gradient(circle at 80% 20%, rgba(26,202,255, 0.15) 0%, transparent 50%),
+                            radial-gradient(circle at 40% 80%, rgba(26,202,255, 0.1) 0%, transparent 50%);">
+                <div class="p-5">
+                    <h2 class="map-title" style="color: #1acaff;">楓丹廷</h2>
+                    <p class="map-subtitle">水與正義的國度</p>
+                    <p class="map-description">
+                        楓丹是正義與水元素之國，以精密的機械技術和嚴謹的法律制度聞名。這裡是水神芙卡洛斯的領土，楓丹廷是一座充滿蒸汽朋克風格的都市，處處可見精妙的機械裝置和噴泉。
+                    </p>
+                    <div class="map-features" style="background: rgba(26,202,255,0.2); border-left: 4px solid #1acaff;">
+                        <strong style="color: #1acaff;">特色景點：</strong><br>
+                        <span style="color: #333;">
+                        • 歌劇院厄庇克勒塞<br>
+                        • 楓丹廷法院<br>
+                        • 機械工場<br>
+                        • 水下世界遺跡
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #1acaff, #00a8e6);">
+                <img src="期末/楓丹.jpg" alt="楓丹" class="img-fluid rounded shadow-lg map-img">
+            </div>
+        </div>
+
+        <!-- 納塔 -->
+        <div class="row map-row">
+            <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #fa2828, #e61e1e);">
+                <img src="期末/納塔.jpg" alt="納塔" class="img-fluid rounded shadow-lg map-img">
+            </div>
+            <div class="col-md-8 position-relative text-dark map-content" style="border-left: 1px solid rgba(250,40,40,0.3);
+                        background-image: 
+                            radial-gradient(circle at 80% 50%, rgba(250,40,40, 0.2) 0%, transparent 50%),
+                            radial-gradient(circle at 20% 20%, rgba(250,40,40, 0.15) 0%, transparent 50%),
+                            radial-gradient(circle at 60% 80%, rgba(250,40,40, 0.1) 0%, transparent 50%);">
+                <div class="p-5">
+                    <h2 class="map-title" style="color: #fa2828;">納塔競技場</h2>
+                    <p class="map-subtitle">火與戰爭的國度</p>
+                    <p class="map-description">
+                        納塔是火焰與戰爭之國，以勇猛的戰士和熾熱的火山聞名。這裡是火神瑪薇卡的領土，納塔蘭是一座建立在活火山群中的堅固要塞，居民們在烈火中鍛鍊意志，追求榮耀與勝利。
+                    </p>
+                    <div class="map-features" style="background: rgba(250,40,40,0.2); border-left: 4px solid #fa2828;">
+                        <strong style="color: #fa2828;">特色景點：</strong><br>
+                        <span style="color: #333;">
+                        • 火焰神殿<br>
+                        • 競技場遺跡<br>
+                        • 活火山觀測點<br>
+                        • 戰士訓練營地
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(showId) {
+            document.getElementById('homeContent').style.display = 'none';
+            document.getElementById('Content').style.display = 'none';
+            document.getElementById('map').style.display = 'none';
+            document.getElementById('mainHeader').style.display = 'none';
+            document.getElementById('secondHeader').style.display = 'none';
+
+            document.getElementById(showId).style.display = 'block';
+            if (showId === 'homeContent') {
+                document.getElementById('mainHeader').style.display = 'block';
+            } else if (showId === 'Content') {
+                document.getElementById('secondHeader').style.display = 'block';
+            }
+        }
+
+        document.getElementById('homeLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('homeContent');
+        });
+
+        document.getElementById('Link').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('Content');
+        });
+
+        document.getElementById('m').addEventListener('click', function(e) {
+            e.preventDefault();
+            showSection('map');
+        });
+
+        showSection('homeContent');
+    </script>
+
+</body>
+
+</html>
