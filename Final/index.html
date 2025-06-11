@@ -17,7 +17,6 @@
             background-image: url("https://github.com/user-attachments/assets/a064b255-44fc-4e89-a3d7-66fea95e59a0");
             color: white;
             min-height: 100vh;
-            /* 改為 min-height */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -65,23 +64,16 @@
             font-size: 24px;
             border: 2px solid #000;
             background-color: rgba(255, 255, 255, 0.9);
-            /* 增加不透明度 */
             padding: 40px 30px;
-            /* 調整 padding */
             border-radius: 20px;
             position: relative;
             z-index: 10;
             width: 90%;
-            /* 調整寬度 */
             max-width: 1200px;
-            /* 加入最大寬度限制 */
             margin: 20px auto;
-            /* 調整 margin */
             text-align: justify;
             line-height: 1.6;
-            /* 增加行高 */
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            /* 加入陰影 */
         }
         
         h1 {
@@ -214,7 +206,6 @@
             position: relative;
             z-index: 1000;
         }
-        /* 地圖區域通用樣式 */
         
         .map-row {
             min-height: 50vh;
@@ -271,7 +262,6 @@
             backdrop-filter: blur(5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        /* 響應式設計調整 */
         
         @media (min-width: 1400px) {
             .boxed-text {
@@ -362,7 +352,6 @@
                 padding: 2rem !important;
             }
         }
-        /* 超小螢幕的特殊處理 */
         
         @media (max-width: 480px) {
             .boxed-text {
@@ -372,12 +361,10 @@
                 margin: 10px auto;
             }
         }
-        /* 超大螢幕的處理 */
         
         @media (min-width: 1600px) {
             header {
                 background-attachment: fixed;
-                /* 固定背景 */
             }
             .boxed-text {
                 width: 70%;
@@ -503,7 +490,6 @@
     </div>
 
     <div id="map" class="container-fluid" style="display: none; padding: 0; min-height: 100vh;">
-        <!-- 蒙德 -->
         <div class="row map-row">
             <div class="col-md-8 position-relative text-dark map-content" style="border-right: 1px solid rgba(102,240,176,0.3);
                         background-image: 
@@ -532,7 +518,6 @@
             </div>
         </div>
 
-        <!-- 璃月 -->
         <div class="row map-row">
             <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #f1c83e, #e6b800);">
                 <img src="https://github.com/user-attachments/assets/ef212edc-3149-4e90-b883-7176f491534d" alt="璃月" class="img-fluid rounded shadow-lg map-img">
@@ -561,7 +546,6 @@
             </div>
         </div>
 
-        <!-- 稻妻 -->
         <div class="row map-row">
             <div class="col-md-8 position-relative text-dark map-content" style="border-right: 1px solid rgba(140,87,238,0.3);
                         background-image: 
@@ -590,7 +574,6 @@
             </div>
         </div>
 
-        <!-- 須彌 -->
         <div class="row map-row">
             <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #46f736, #32d624);">
                 <img src="https://github.com/user-attachments/assets/eaeecfee-0645-42e6-95c3-8f853e6fc44d" alt="須彌" class="img-fluid rounded shadow-lg map-img">
@@ -619,7 +602,6 @@
             </div>
         </div>
 
-        <!-- 楓丹 -->
         <div class="row map-row">
             <div class="col-md-8 position-relative text-dark map-content" style="border-right: 1px solid rgba(26,202,255,0.3);
                         background-image: 
@@ -648,7 +630,6 @@
             </div>
         </div>
 
-        <!-- 納塔 -->
         <div class="row map-row">
             <div class="col-md-4 p-0 position-relative map-image" style="background: linear-gradient(45deg, #fa2828, #e61e1e);">
                 <img src="https://github.com/user-attachments/assets/8dc6f987-05ee-4bf7-837c-aa6c1b397f0e" alt="納塔" class="img-fluid rounded shadow-lg map-img">
