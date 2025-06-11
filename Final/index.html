@@ -16,9 +16,16 @@
             text-align: center;
             background-image: url("https://github.com/user-attachments/assets/a064b255-44fc-4e89-a3d7-66fea95e59a0");
             color: white;
-            height: 95vh;
+            min-height: 100vh;
+            /* 改為 min-height */
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
         }
         
         header img {
@@ -57,15 +64,24 @@
             color: black;
             font-size: 24px;
             border: 2px solid #000;
-            background-color: rgba(255, 255, 255, 0.6);
-            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            /* 增加不透明度 */
+            padding: 40px 30px;
+            /* 調整 padding */
             border-radius: 20px;
-            padding: 100px 50px;
             position: relative;
             z-index: 10;
-            width: 80%;
-            margin: 50px auto;
+            width: 90%;
+            /* 調整寬度 */
+            max-width: 1200px;
+            /* 加入最大寬度限制 */
+            margin: 20px auto;
+            /* 調整 margin */
             text-align: justify;
+            line-height: 1.6;
+            /* 增加行高 */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            /* 加入陰影 */
         }
         
         h1 {
@@ -255,11 +271,33 @@
             backdrop-filter: blur(5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        /* 響應式設計調整 */
         
-        @media (min-width: 993px) and (max-width: 1399px) {
+        @media (min-width: 1400px) {
+            .boxed-text {
+                width: 80%;
+                padding: 50px 40px;
+                font-size: 26px;
+            }
+        }
+        
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .boxed-text {
+                width: 85%;
+                padding: 45px 35px;
+                font-size: 24px;
+            }
+        }
+        
+        @media (min-width: 993px) and (max-width: 1199px) {
             .cards-container .col-lg-2 {
                 flex: 0 0 33.33% !important;
                 max-width: 33.33% !important;
+            }
+            .boxed-text {
+                width: 90%;
+                padding: 40px 30px;
+                font-size: 22px;
             }
         }
         
@@ -267,6 +305,11 @@
             .cards-container .col-lg-2 {
                 flex: 0 0 50% !important;
                 max-width: 50% !important;
+            }
+            .boxed-text {
+                width: 95%;
+                padding: 35px 25px;
+                font-size: 20px;
             }
         }
         
@@ -276,29 +319,16 @@
             }
         }
         
-        @media (min-width: 992px) and (max-width: 1199px) {
-            .boxed-text {
-                width: 80%;
-                padding: 50px 30px;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 991px) {
-            .boxed-text {
-                width: 85%;
-                padding: 40px 30px;
-                font-size: 20px;
-            }
-        }
-        
         @media (max-width: 768px) {
             header {
                 background-image: url("https://github.com/user-attachments/assets/49121d67-f918-4ee2-a429-fb7f1c3e8fb3");
+                min-height: 100vh;
             }
             .boxed-text {
-                width: 90%;
-                padding: 20px 15px;
+                width: 95%;
+                padding: 25px 20px;
                 font-size: 18px;
+                margin: 15px auto;
             }
             h1 {
                 text-align: center;
@@ -330,6 +360,30 @@
             }
             .p-5 {
                 padding: 2rem !important;
+            }
+        }
+        /* 超小螢幕的特殊處理 */
+        
+        @media (max-width: 480px) {
+            .boxed-text {
+                width: 98%;
+                padding: 20px 15px;
+                font-size: 16px;
+                margin: 10px auto;
+            }
+        }
+        /* 超大螢幕的處理 */
+        
+        @media (min-width: 1600px) {
+            header {
+                background-attachment: fixed;
+                /* 固定背景 */
+            }
+            .boxed-text {
+                width: 70%;
+                max-width: 1400px;
+                padding: 60px 50px;
+                font-size: 28px;
             }
         }
     </style>
